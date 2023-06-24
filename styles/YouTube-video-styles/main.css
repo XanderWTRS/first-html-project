@@ -1,0 +1,768 @@
+.main
+{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 26px;
+}
+/*--------screen adjust--------*/
+@media (max-width: 1050px) 
+{
+  .main 
+  {
+    grid-template-columns: 1fr;
+  }
+  .r-title
+  {
+    white-space: nowrap;
+  }
+  .right-side .category-buttons
+  {
+    justify-content: left;
+  }
+  .right-side .video-suggestions .other-videos .r-video-details .r-title 
+  {
+    font-size: 16px;
+  }
+  .right-side .video-suggestions .other-videos .r-video-details .r-creator
+  {
+    font-size: 14px;
+  }
+  .right-side .video-suggestions .other-videos .r-video-details .r-data 
+  {
+    font-size: 14px;
+  }
+}
+@media (max-width:1300px) and (min-width: 1050px)
+{
+  .media-container .download-button , .media-container .thanks-button
+  {
+    display: none;
+  }
+}
+/* ---------------------------------------left side-------------------------------------- */
+.left-side
+{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+/*---------------------video-------------------------*/
+.Current-video
+{
+  width: 100%;
+  height: auto;
+}
+.current-video-preview
+{
+  max-width: 100%;
+  overflow: hidden;
+}
+/*----------------------title-video------------------------*/
+.title
+{
+  margin-top: 11px;
+  font-size: 18px;
+  font-weight: 500;
+  pointer-events: none;
+}
+/*----------------------detials-video------------------------*/
+.details-container
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+/*-------------detials-video-left---------------*/
+.channel-container
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4px;
+}
+
+.profile-picture
+{
+  height: 42px;
+  border-radius: 28px;
+  margin-right: 8px;
+}
+
+.stat-container
+{
+  line-height: 20px;
+}
+
+.name
+{
+  font-weight: 500;
+  display: flex;
+  position: relative;
+}
+.name-tool-tip
+{
+  position: absolute;
+  bottom: 45px;
+  left: 10px;
+  background-color: rgba(70, 70, 70, 0.902);
+  color: white;
+  font-size: 12px;
+  padding: 7px 5px;
+  border-radius: 7px;
+  border: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.name:hover .name-tool-tip
+{
+  opacity: 1;
+}
+
+.subscribers
+{
+  font-size: 12px;
+  color: rgb(123, 123, 123);
+  font-weight: 400;
+  pointer-events: none;
+}
+
+.subscribe-button
+{
+  background-color: rgb(18, 18, 18);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border: 0px none transparent;
+  border-radius: 20px;
+  font-family: Roboto, Arial;
+  padding: 9px 15px 9px 15px;
+  margin-left: 40px;
+}
+.subscribe-button:hover
+{
+  background-color: rgb(43, 43, 43);
+}
+.subscribe-button:active
+{
+  background-color: rgb(83, 83, 83);
+}
+/*----------------------detials-video-right------------------------*/
+.media-container
+{
+  margin-top: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-icon , .dislike-icon , .share-icon , .download-icon , .thanks-icon
+{
+  height: 20px;
+}
+
+.like-icon , .share-icon , .download-icon , .thanks-icon
+{
+  margin-right: 10px;
+}
+
+.like-button , .dislike-button , .share-button , .download-button , .thanks-button , .extra
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  border-radius: 55px;
+  border-style: none;
+  font-weight: 500;
+  font-family: Roboto, Arial;
+  font-size: 14px;
+  padding: 6px 15px;
+  position: relative;
+}
+.like-button
+{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.dislike-button
+{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 1px solid rgb(177, 177, 177);
+  margin-left: -8px;
+}
+.extra
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px;
+  padding: 6px 11px;
+}
+.extra-text
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  font-weight: 900;
+}
+
+.like-tool-tip , .dislike-tool-tip , .share-tool-tip , .download-tool-tip, .thanks-tool-tip
+{
+  position: absolute;
+  background-color:rgba(70, 70, 70, 0.902);
+  color:white;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+  bottom: -50px;
+  left: 0px;
+  padding: 7px 7px;
+  border-radius: 7px;
+  border: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.like-tool-tip
+{
+  left: 16px;
+}
+.dislike-tool-tip
+{
+  left: -25px;
+}
+.share-tool-tip
+{
+  left: 20px;
+}
+.download-tool-tip
+{
+  left: 18px;
+}
+.thanks-tool-tip
+{
+  bottom: -65px;
+  left: -30px;
+  right: -30px;
+  white-space: normal;
+}
+
+.like-button:hover .like-tool-tip,.dislike-button:hover .dislike-tool-tip,.download-button:hover .download-tool-tip,.share-button:hover .share-tool-tip,.thanks-button:hover .thanks-tool-tip
+{
+  opacity: 1;
+  z-index: 1;
+}
+
+.like-button:hover,.dislike-button:hover,.download-button:hover ,.share-button:hover,.thanks-button:hover,.extra:hover
+{
+  background-color: rgb(223, 223, 223);
+}
+
+.like-button:active,.dislike-button:active,.download-button:active,.share-button:active,.thanks-button:active,.extra:active
+{
+  background-color: rgb(209, 209, 209);
+}
+/*----------------------description-video------------------------*/
+.video-description
+{
+  background-color: rgb(240, 240, 240);
+  border-radius:12px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-desc-tool-tip
+{
+  font-family: Roboto, Arial;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video-description:hover
+{
+  background-color: rgb(220, 220, 220);
+}
+
+.desc-head , .text
+{
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 13.5px;
+  margin-left: 10px;
+}
+.desc-head
+{
+  margin-top: 12px;
+
+  font-family: Roboto, Arial;
+  font-weight: 500;
+}
+/*----------------------comments-video------------------------*/
+.video-comments
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.total-comments
+{
+  display: flex;
+  margin-bottom: 7px;
+  margin-top: 3px;
+}
+.sort-by
+{
+  margin-left: 50px;
+  display: flex;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 3px;
+  border: none;
+  border-radius: 3px;
+}
+.sort-by:active
+{
+  background-color: rgb(220, 220, 220);
+}
+.sort-by-icon
+{
+  height: 20px;
+  margin-right: 10px;
+}
+
+.own-comment
+{
+  display: flex;
+  margin: 10px 0px;
+}
+.write-comment
+{
+  flex: 1;
+  margin-left: 5px;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  line-height: 30px;
+}
+.write-comment::placeholder
+{
+  font-size: 14px;
+}
+/*------------random comment-------------*/
+.comment
+{
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+}
+.comment:hover .button-options-comment
+{
+  opacity: 1;
+}
+.button-options-comment
+{
+  position: absolute;
+  margin-left: 1245px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  margin-top: 3px;
+  padding: 5px 7px 5px 7px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.comment-profile-pic
+{
+  margin-right: 7px;
+}
+
+.comment-user-data
+{
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 400;
+  color: gray;
+  font-family: Roboto, Arial;
+}
+.comment-user-name
+{
+  font-weight: 500;
+  font-size: 14px;
+  font-family: Roboto, Arial;
+}
+.comment-user-date
+{
+  margin-left: 15px;
+}
+
+.comment-comment
+{
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-family: Roboto, Arial;
+  max-width: 1192px;
+}
+
+.comment-stats
+{
+  display: flex;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.like-icon-comment
+{
+  height: 20px;
+}
+
+.like-button-comment , .dislike-button-comment
+{
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  display: flex;
+  position: relative;
+}
+.dislike-button-comment
+{
+  margin-left: 5px;
+}
+.like-button-comment:hover , .dislike-button-comment:hover , .answer-button:hover
+{
+  background-color: rgb(240, 240, 240);
+}
+.like-button-comment:active , .dislike-button-comment:active , .answer-button:active
+{
+  background-color: rgb(209, 209, 209);
+}
+
+.like-comment-tool-tip , .dislike-comment-tool-tip
+{
+  position: absolute;
+  background-color:rgba(70, 70, 70, 0.902);
+  color:white;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+  bottom: -45px;
+  left: 0px;
+  padding: 7px 7px;
+  border-radius: 7px;
+  border: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.like-button-comment:hover .like-comment-tool-tip , .dislike-button-comment:hover .dislike-comment-tool-tip
+{
+  opacity: 1;
+}
+
+.answer-button
+{
+  border: none;
+  background-color: white;
+  margin-left: 10px;
+  padding: 7px 14px;
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 13px;
+  font-family: Roboto, Arial;
+}
+
+.comment-amount
+{
+  font-size: 12px;
+  margin-left: 1px;
+  color: gray;
+}
+
+.comment-replies
+{
+  margin-bottom: 0px;
+}
+.button-replies
+{
+  font-family: Roboto, Arial;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(0, 81, 255);
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 11px 18px;
+}
+.button-replies:hover
+{
+  background-color: rgba(0, 208, 255, 0.167);
+}
+/* ---------------------------------------left side-------------------------------------- */
+
+
+/* -------------------right side------------------- */
+.right-side
+{
+  display: flex;
+  flex-direction: column;
+}
+/*---------buttons---------------*/
+.category-buttons
+{
+  display: flex;
+  justify-content: left;
+  margin-top: 8px;
+  margin-bottom: 19px;
+}
+
+.default-cat-button
+{
+  border-style: none; 
+  font-family: Roboto, Arial;
+  font-size: 14px;
+  padding: 7px 15px;
+  border-radius: 8px;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+.default-cat-button:hover
+{
+  background-color: rgb(223, 223, 223);
+}
+.default-cat-button:active
+{
+  background-color: rgb(209, 209, 209);
+}
+
+.all-button
+{
+  border-style: none; 
+  font-family: Roboto, Arial;
+  font-size: 14px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  margin-right: 5px;
+  background-color: rgb(18, 18,18);
+  color: white;
+}
+.all-button:hover
+{
+  background-color: rgb(43, 43, 43);
+}
+.all-button:active
+{
+  background-color: rgb(83, 83, 83);
+}
+/*--------------------------------videos--------------------------------*/
+.other-videos
+{
+  display: flex;
+  position: relative;
+  margin-bottom: 9px;
+  width: 360px;
+}
+.other-videos:hover .video-overlay
+{
+  opacity: 1;
+}
+/*--------------------------------overlay--------------------------------*/
+.video-overlay
+{
+  position: absolute;
+  display: flex;
+  z-index: 300;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+/*---overlay elements---*/
+.preview-video
+{
+  position: absolute;
+  height: 95px;
+  width: 168px;
+  border-radius: 9px;
+}
+
+.button-watch-later
+{
+  position: absolute;
+  margin-left: 135px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border-style: none;
+  padding: 4px 4px 2px 4px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.tool-tip-watch-later
+{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);;
+  color: white;
+  white-space: nowrap;
+  left: -90px;
+  top: 0px;
+  padding: 8px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.button-watch-later:hover .tool-tip-watch-later
+{
+  opacity: 1;
+}
+
+.button-add-to-watchlist
+{
+  position: absolute;
+  margin-left: 135px;
+  margin-top: 38px;
+  border-radius: 4px;
+  border-style: none;
+  padding: 4px 4px 2px 4px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.tool-tip-watch-list
+{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);;
+  color: white;
+  white-space: nowrap;
+  left: -112px;
+  top: 0px;
+  padding: 8px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.button-add-to-watchlist:hover .tool-tip-watch-list
+{
+  opacity: 1;
+}
+
+.icon-watch-later , .icon-watch-list
+{
+  height: 20px;
+}
+
+.button-options
+{
+  position: absolute;
+  margin-left: 372px;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  margin-top: 3px;
+  padding: 5px 7px 5px 7px;
+}
+.icon-options
+{
+  height: 15px;
+}
+.button-options:active , .comment:active .button-options-comment
+{
+  background-color: rgb(225, 225, 225);
+}
+/*---overlay elements---*/
+/*--------------------------------overlay--------------------------------*/
+
+.r-video-thumbnail
+{
+  width: 168px;
+  height: 94px;
+  margin-right: 5px;
+  display: flex;
+  position: relative;
+}
+
+.time
+{
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background-color: rgb(21, 21, 21);
+  color: white;
+  font-size: 13px;
+  padding: 2px 4px;
+  border-radius: 5px;
+  font-family: Roboto, Arial;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.r-video-details
+{
+  display: flex;
+  flex-direction: column;
+}
+.r-title
+{
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 1px;
+  line-height: 18px;
+}
+.r-creator
+{
+  font-size: 12px;
+  color: rgb(95, 95, 95);
+  margin-top: 8px;
+  margin-bottom: 4px;
+  display: flex;
+  position: relative;
+}
+.r-creator .r-creator-small
+{
+  position: absolute;
+  background-color: rgba(66, 66, 66, 0.89);
+  color: white;
+  font-family: Roboto, Arial;
+  font-size: 12px;
+  padding: 9px 4px;
+  border-radius: 4px;
+  bottom: 40px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.r-creator:hover .r-creator-small
+{
+  opacity: 1;
+}
+
+.r-data
+{
+  font-size: 11px;
+  pointer-events: none;
+  color: rgb(95, 95, 95);
+}
+
+.thumbnail
+{
+  border-radius: 9px;
+}
+/* -------------------right side------------------- */

@@ -1,0 +1,23 @@
+body
+{
+  height: 1750px;
+  font-family: Roboto, Arial;
+  margin-top: 80px;
+}
+
+button
+{
+  cursor: pointer;
+}
+
+a
+{
+  text-decoration: none;
+  color: black;
+}
+
+.link
+{
+  text-decoration: underline;
+  color: rgb(0, 119, 255);
+}
